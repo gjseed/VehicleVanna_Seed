@@ -25,8 +25,8 @@ namespace VehicleVanna_Seed
             var myVar = JsonConvert.DeserializeObject<AutoEnum>(requestBody);
             log.LogInformation ("Log Stuff Here");
 
-            string responseMessage = $"Hello, Buyer {myVar.FName} {myVar.LName}, purchased a {myVar.AutoType} of Make {myVar.AutoMake}, Model {myVar.AutoModel}" + 
-                $"and Year{myVar.AutoYear}. The list price is: {myVar.listPrice.ToString()}." + 
+            string responseMessage = $"Hello, Buyer {myVar.FName} {myVar.LName}, purchased a {myVar.AutoType} of Make {myVar.AutoMake}, Model {myVar.AutoModel} " + 
+                $"and Year {myVar.AutoYear}. The list price is: {myVar.listPrice.ToString()}." + 
                 $"A discount will be applied whcih is {(myVar.listPrice * .085m)}, for a total of: {(myVar.listPrice - (myVar.listPrice * .085m)).ToString("C")}";
 
             return new OkObjectResult(responseMessage);
